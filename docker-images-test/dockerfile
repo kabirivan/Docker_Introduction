@@ -1,0 +1,11 @@
+FROM nginx
+
+RUN useradd ivan
+
+COPY fruit /usr/share/nginx/html
+
+ENV archivo docker
+
+WORKDIR /usr/share/nginx/html
+
+EXPOSE 90
