@@ -1,10 +1,12 @@
 FROM centos 
+LABEL version=1.0
+LABEL vendor="IVAN"
 RUN yum install httpd -y
 # COPY beryllium /var/www/html 
 
 WORKDIR /var/www/html
 
 COPY startbootstrap-freelancer-master .
-ENV content prueba
-RUN echo "$content" > /var/www/html/prueba.html 
-CMD apachectl -DFOREGROUND
+
+COPY run.sh /run.sh
+CMD sh /run.sh

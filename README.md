@@ -18,6 +18,9 @@ docker run -d --name apache -p 80:80 apache-centos:apache-cmd
 docker ps -a
 docker rm -fv apache
 
+# View datasource
+
+docker ps --no-trunc
 
 # Notes
 
