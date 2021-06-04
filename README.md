@@ -17,3 +17,8 @@ docker run -d --name apache -p 80:80 apache-centos:apache-cmd
 # Delete Container
 docker ps -a
 docker rm -fv apache
+
+
+# Notes
+
+Ruta defecto Apache -> /var/www/html 
