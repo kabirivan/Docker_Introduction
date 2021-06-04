@@ -22,7 +22,13 @@ docker rm -fv apache
 
 docker ps --no-trunc
 
+
+# Generate ssl to apache
+
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout docker.key -out docker.crt
+
 # Notes
 
 Ruta defecto Apache -> /var/www/html 
 revisar tamano archivos -> du -sh *   du -shc *
+
