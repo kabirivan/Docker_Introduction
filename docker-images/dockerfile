@@ -1,7 +1,10 @@
 FROM centos 
 RUN yum install httpd -y
 # COPY beryllium /var/www/html 
-COPY startbootstrap-freelancer-master /var/www/html 
+
+WORKDIR /var/www/html
+
+COPY startbootstrap-freelancer-master .
 ENV content prueba
 RUN echo "$content" > /var/www/html/prueba.html 
 CMD apachectl -DFOREGROUND
