@@ -25,3 +25,4 @@ docker ps --no-trunc
 # Notes
 
 Ruta defecto Apache -> /var/www/html 
+revisar tamano archivos -> du -sh *   du -shc *
