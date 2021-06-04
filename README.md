@@ -6,6 +6,8 @@
 docker build --tag apache-centos .
 docker build -t apache-centos:apache-cmd .
 
+docker build -t test -f my-dockerfile
+
 # Run image
 docker run -d apache-centos
 docker run -d --name apache apache-centos 
@@ -26,6 +28,10 @@ docker ps --no-trunc
 # Generate ssl to apache
 
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout docker.key -out docker.crt
+
+# Delete image
+docker rmi apache-centos  
+
 
 # Notes
 
