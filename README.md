@@ -47,3 +47,8 @@ revisar tamano archivos -> du -sh *   du -shc *
 
 docker run --help|less
 docker run -d jenkins
+docker run -d -p 3000:8080 jenkins/jenkins
+docker rm -f name 
+
+
+
