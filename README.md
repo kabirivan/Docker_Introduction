@@ -42,3 +42,8 @@ docker images -f dangling=true -q | xargs docker rmi
 Ruta defecto Apache -> /var/www/html 
 revisar tamano archivos -> du -sh *   du -shc *
 
+
+# Containers
+
+docker run --help|less
+docker run -d jenkins
