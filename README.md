@@ -44,11 +44,37 @@ revisar tamano archivos -> du -sh *   du -shc *
 
 
 # Containers
+### Run
 
 docker run --help|less
 docker run -d jenkins
 docker run -d -p 3000:8080 jenkins/jenkins
+
+### Remove
 docker rm -f name 
 
+### Rename
+docker rename romantic_ptolemy jenkins
+
+### Stop
+docker stop container ID
+
+### Start
+docker start container ID | name
+docker restart container ID | name
+
+### Container Inside
+
+docker exec -ti bd80f19b15ab bash
+whoami
+hostname
+docker exec -u root -ti bd80f19b15ab bash
 
 
+### Jenkins
+cat /var/jenkins_home/secrets/initialAdminPassword
+
+### Environment Variable
+
+### Remove All Containers
+docker ps -q | xargs docker rm -f
