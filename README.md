@@ -78,7 +78,14 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 
 ### Remove All Containers
 docker ps -q | xargs docker rm -f
+docker rm -fv $(docker ps -aq)
 
 
 ## Create MySQL Container
 docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag
+docker run --name my-db1 -e MYSQL_ROOT_PASSWORD=12345 -d mysql:5.7
+docker logs -f my-db1      
+
+## Map ports
+docker inspect my-db1
+"IPAddress": "172.17.0.2"
