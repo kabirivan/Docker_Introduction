@@ -86,6 +86,13 @@ docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag
 docker run --name my-db1 -e MYSQL_ROOT_PASSWORD=12345 -d mysql:5.7
 docker logs -f my-db1      
 
+docker run --name my-db2 -e MYSQL_ROOT_PASSWORD=12345 -p 3333:3306 -e MYSQL_DATABASE=docker -e MYSQL_USER=docker -e MYSQL_PASSWORD=1234  -d mysql:5.7
+
 ## Map ports
 docker inspect my-db1
 "IPAddress": "172.17.0.2"
+
+
+## Create Mongo Container
+docker run -d --name my-mongo -p 27017:27017 mongo:latest
+docker stats my-mongo
