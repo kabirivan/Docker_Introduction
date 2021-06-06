@@ -107,3 +107,7 @@ docker exec -ti postgres-ivan bash
 psql -d docker-db -U ivan
 
 
+# Limit container
+docker stats mongo
+docker run -d -m 500mb --name mongo2 mongo
+docker run -d -m 500gb --name mongo3 mongo
