@@ -95,4 +95,15 @@ docker inspect my-db1
 
 ## Create Mongo Container
 docker run -d --name my-mongo -p 27017:27017 mongo:latest
+docker run -d --name my-mongo -p 27018:27017 mongo:latest  
 docker stats my-mongo
+
+
+## Create Postgres Container
+docker pull postgres
+docker run --name postgres-ivan -e POSTGRES_PASSWORD=12345 -e POSTGRES_USER=ivan -e POSTGRES_DB=docker-db -p 5432:5432 -d postgres
+
+docker exec -ti postgres-ivan bash  
+psql -d docker-db -U ivan
+
+
